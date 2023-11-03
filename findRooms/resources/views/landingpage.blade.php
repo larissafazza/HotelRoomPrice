@@ -4,7 +4,7 @@
 
 
 <div id="shows" class="agenda">
-    <h1 class="title">hotéis disponíveis nos dias {{ aqui}}</h1> 
+    <h1 class="title">hotéis disponíveis nos dias</h1> 
     <hr class="divisoria-white">
     <div class="eventos">
         <div class="evento">

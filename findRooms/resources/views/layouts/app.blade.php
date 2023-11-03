@@ -29,6 +29,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 
 </head>
@@ -37,7 +38,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ ('Find your Hotel!') }}
+                    <img class="nav-logo" src="{{ asset('images/logo.png') }}" alt="Nome alternativo da imagem">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -50,12 +51,12 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav nav-login">
                         <!-- Authentication Links -->
                         @guest
                             
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ _('Register and Host your Hotel rooms here!') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"><button type="button" class=" nav-register-button">{{ _('Register and Host here!') }}</button></a>
                                 </li>
                         @else
                             <li class="nav-item dropdown">

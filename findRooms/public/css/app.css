@@ -1,4 +1,26 @@
+.nav-logo {
+    width: 50%;
+    height: auto;
+}
+
+.nav-login {
+    margin-right: 5px !important;
+}
+
 .btn-create-hotel {
     background-color: #21252908;
     border: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.nav-register-button {
+    border-radius: 21px;
+    background-color: #293c51;
+    border: 4px solid #D59F37;
+    color: white;
+    /* height: 50px; */
+    padding: 12px;
+}
+
+.nav-register-button:hover {
+    background-color: #4a6a6c;
 }
