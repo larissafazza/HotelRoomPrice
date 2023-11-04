@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HotelsController;
+use App\Http\Controllers\PricesController;
+use App\Http\Controllers\RoomsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,26 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::get('/', [HotelsController::class, 'index'])
+    ->name('landingpage');
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', 'HotelsController@index');
+
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
+
+// Route::resource('hotels', HotelsController::class)
+//     ->middleware('auth');
+
+// Route::put('todos/{id}/mark-as-done', [TodoController::class, 'markAsDone'])
+//     ->name('todos.markAsDone')
+//     ->middleware('auth');
+
+// Auth::routes();
+
+// Route::get('/home', [HomeController::class, 'index'])
+//     ->name('home')
+//     ->middleware('auth');
