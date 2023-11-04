@@ -9,6 +9,12 @@ class Price extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'room_id',
+        'date_of_stay',
+        'price',
+    ];
+
     public function room()
     {
         return $this->belongsTo(Room::class);
