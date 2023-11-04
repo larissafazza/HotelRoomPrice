@@ -1,0 +1,73 @@
+body {
+    background-color: #293c51;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hotel-box {
+    width: 70%;
+    background-color: white;
+    display: flex;
+    padding: 12px;
+    border: 5px solid #FFA500;
+    border-radius: 9px;
+    margin-bottom: 26px;
+}
+
+.hotel-box:hover {
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.hotel-content {
+    width: 65%;
+}
+
+.hotel-content h3 {
+    margin: 0px 20px 14px 20px;
+    color: #293c51;
+    font-family: 'Seaweed Script', cursive;
+    font-size: 38px;
+}
+
+.hotel-icon {
+    color: #293c51;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.hotel-info {
+    padding-bottom: 12px;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #FFA500;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.hotel-image {
+    width: 35%;
+    padding: 10px;
+}
+
+.hotel-image img {
+    width: 200px;
+    height: auto;
+}

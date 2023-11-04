@@ -3,44 +3,46 @@
 @section('content')
 
 
-<div id="shows" class="agenda">
-    <h1 class="title">hotéis disponíveis nos dias</h1> 
-    <hr class="divisoria-white">
-    <div class="eventos">
-        <div class="evento">
-            <div class="data">
-                <div class="data-content">
-                    <h2>28</h2>
-                    <p>outubro</p>
-                </div>
+<div id="hotels" class="hotels">
+    <div class="container">
+        @foreach($hotels as $hotel)
+        <div class="hotel-box">
+            <div class="hotel-image">
+                @if($hotel->image_url == '')
+                    <img src="https://hryoutest.in.ua/uploads/images/default.jpg" alt="File wasn't uploaded">        
+                @else
+                    <img src="{{ asset($hotel->image_url) }}" alt="{{ $hotel->name }}">       
+                @endif
             </div>
-            <div class="info">
-                <div class="detail-info">
-                    <h2>OUTRO EU VOZ E VIOLÃO NO BONA</h2>
-                    <p>Sábado, às 21h</p>
-                    <p id="local"><i class="fa-solid fa-location-dot"></i>SÃO PAULO | BONA CASA DE MÚSICA</p>
-                </div>
-                <a href="https://www.eventim.com.br/event/outroeu-voz-e-violao-no-bona-bona-casa-de-musica-17524274/?affiliate=DEZ"
-                    class="button" target="_blank">Ingressos</a>
+            <div class="hotel-content">
+                <h3>{{ $hotel->name }}</h3> 
+                <ul>
+                    <li class="hotel-info">
+                        <a href="{{ $hotel->website }}" target="_blank"><ion-icon class="hotel-icon" name="globe-outline"></ion-icon>{{ $hotel->website }}</a>
+                    </li>
+                    <li class="hotel-info">
+                        <ion-icon class="hotel-icon" name="location-outline"></ion-icon>{{ $hotel->location }}
+                    </li>
+                    <li class="hotel-info">
+                        <a href="https://wa.me/{{$hotel->phone}}" target="_blank"><ion-icon class="hotel-icon" name="call"></ion-icon>{{ $hotel->phone }}</a>
+                    </li>
+                    <li class="hotel-info">
+                        <a href=""><ion-icon class="hotel-icon" name="bed-outline"></ion-icon>{{ ('Rooms Avaluable') }}</a>
+                    </li>
+                    
+                </ul>
+                <!-- <a href="tel:+123456789">
+            <ion-icon name="call"></ion-icon>
+            <span>Call</span>
+        </a> -->
+                <!-- $table->string('name');
+            $table->string('location');
+            $table->string('phone');
+            $table->string('website')->nullable();
+            $table->string('image_url'); -->
             </div>
         </div>
-        <div class="evento">
-            <div class="data">
-                <div class="data-content">
-                    <h2>28</h2>
-                    <p>outubro</p>
-                </div>
-            </div>
-            <div class="info">
-                <div class="detail-info">
-                    <h2>OUTROEU VOZ E VIOLÃO NO BONA - SESSÃO EXTRA!</h2>
-                    <p>Sábado, às 18h</p>
-                    <p id="local"><i class="fa-solid fa-location-dot"></i>SÃO PAULO | BONA CASA DE MÚSICA</p>
-                </div>
-                <a href="https://www.eventim.com.br/event/outroeu-voz-e-violao-no-bona-bona-casa-de-musica-17587613/?affiliate=DEZ"
-                    class="button" target="_blank">Ingressos</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
