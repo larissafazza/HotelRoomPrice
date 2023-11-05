@@ -2,6 +2,9 @@
 
 @section('content')
 
+@auth
+    <a href="{{ route('hotels.create') }}" class="btn-create-hotel btn-form btn btn-light">Host a new Hotel</a>
+@endauth
 
 <div id="hotels" class="hotels">
     <div class="container-hotels">

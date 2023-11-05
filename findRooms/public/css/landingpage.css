@@ -2,6 +2,17 @@ body {
     background-color: #293c51;
 }
 
+.btn-create-hotel {
+    margin-left: 201px !important;
+    margin-bottom: 36px;
+    background-color: #293c51;
+    color: #FFA500 !important;
+}
+
+.btn-create-hotel:hover {
+    color: #293c51 !important;
+}
+
 .container-hotels {
     align-items: center;
     display: flex;
