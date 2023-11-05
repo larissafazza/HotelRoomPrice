@@ -113,13 +113,13 @@ class RoomSeeder extends Seeder
             [
                 'type' => 'double',
                 'number_of_rooms' => 18,
-                'hotel_id' => 1,
+                'hotel_id' => 7,
                 'description' => "Comfort and peace for a weekend with you significant other, room with a couples bed and a private room"
             ],
             [
                 'type' => 'suite',
                 'number_of_rooms' => 22,
-                'hotel_id' => 1,
+                'hotel_id' => 7,
                 'description' => "Luxury and Comfort, suite room with a king size bed and a jacuzzi"
             ]
         ]);
