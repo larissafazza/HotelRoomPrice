@@ -55,7 +55,9 @@ class HotelsController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_path = $image->store('public/images');
-        }
+        }        
+
+        $image_path = str_replace('public/', 'storage/', $image_path);
 
         $data = [
             'user_id' => auth()->user()->id,
