@@ -15,8 +15,9 @@ return new class extends Migration {
             $table->string('name');
             $table->string('location');
             $table->string('phone');
-            $table->string('website')->nullable();
-            $table->string('image_url');
+            $table->string('website')->nullable()->default('no website avaluable');
+            $table->string('image_url')->default('');
+            $table->foreignId('user_id')->default(1);
             $table->timestamps();
         });
     }
