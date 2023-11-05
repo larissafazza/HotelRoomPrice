@@ -12,7 +12,9 @@ Upload Your Hotel here!
                 <div class="card-body">
                     <form class="hotel-form" method="put" action="{{ route('hotels.edit', $hotel->id) }}" id="create-form" enctype="multipart/form-data">
                         @csrf
-                        <input class="input-form form-control" type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        @auth
+                            <input class="input-form form-control" type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        @endauth    
                         <h3>{{ $hotel->name }}</h3>
                         <div class="form-group form-div form-div-img">
                             <img src="{{ asset($hotel->image_url) }}" alt="">
@@ -33,18 +35,20 @@ Upload Your Hotel here!
                             <label class="label">Hotel Website URL</label>
                             <input value="{{ $hotel->website }}" class="input-form form-control" type="url" id="website" name="website" disabled>
                         </div>
-                        <button type="submit" name="submit" class="btn-form btn btn-light">Edit</button>
+                        @auth
+                            <button type="submit" name="submit" class="btn-form btn btn-light">Edit</button>
+                            <a class="btn-form btn btn-light" href="{{ route('rooms.create', ['hotel' => $hotel]) }}">Add Room Type</a>
+                        @endauth
                     </form>
                     <div class="show-rooms">
                         @foreach($hotel->rooms as $room)
-                        <div class="room-box">
+                        <a class="room-link" href="{{ route('rooms.show', ['room' => $room]) }}"><div class="room-box">
                             <h2>{{ $room->type }}</h2>
                             <span> {{ $room->number_of_rooms }} rooms avaluable</span>
                             <h4>{{ $room->description }}<h4>
-                        </div>
+                        </div></a>
                         @endforeach
                     </div>
-                    <button type="button" name="view-rooms" class="btn-form btn btn-light">View rooms</button>
                 </div>
             </div>
         </div>

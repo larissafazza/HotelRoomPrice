@@ -14,7 +14,12 @@ class HotelsController extends Controller
      */
     public function index()
     {
-        $hotels = Hotel::all();
+        if(auth()->check()){
+            $hotels = Auth::user()->hotels;
+        }
+        else{
+            $hotels = Hotel::all();
+        }
         return view('landingpage', compact('hotels'));
     }
 
@@ -66,7 +71,7 @@ class HotelsController extends Controller
         if ($request->ajax()) {
             return response()->json(['message' => 'Hotel created successfully', 'hotel' => $hotel], 201);
         } else {
-            return redirect()->route('hotels.index')->with('success', 'Todo created successfully');
+            return redirect()->route('hotels.show', ['hotel' => $hotel])->with('success', 'Hotel created successfully');
         }
     }
 

@@ -38,7 +38,7 @@ Upload Your Hotel here!
                             <label class="label">Hotel Website URL</label>
                             <input value="{{ $hotel->website }}" class="input-form form-control" type="url" id="website" name="website">
                         </div>
-                        <button type="submit" name="submit" class="btn-form btn btn-light">Edit</button>
+                        <button type="submit" name="submit" class="btn-form btn btn-light">Salvar</button>
                     </form>
                 </div>
             </div>

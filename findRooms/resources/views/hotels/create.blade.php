@@ -5,6 +5,7 @@
     @endsection
 
     @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -35,7 +36,7 @@
                             </div>
                             <div class="form-group form-div">
                                 <label for="country">Country</label>
-                                <select id="country" name="country" class="form-control input-form">
+                                <select id="country" name="country" class="form-control input-form" required>
                                     <option value="" selected disabled>Select your country</option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
@@ -292,7 +293,7 @@
                                 <input class="input-form form-control" type="url" id="website" name="website">
                             </div>
                             <div class="form-group form-div">
-                                <label for="image" class="label">Image Upload:</label>
+                                <label for="image" class="label">Image Upload</label>
                                 <input class="input-form form-control" type="file" id="form-image" name="image" accept="image/*">
                             </div>
                             <button type="submit" name="submit" class="btn-form btn btn-light">Save</button>
