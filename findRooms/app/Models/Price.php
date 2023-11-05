@@ -11,7 +11,8 @@ class Price extends Model
 
     protected $fillable = [
         'room_id',
-        'date_of_stay',
+        'start_date',
+        'end_date',
         'price',
     ];
 

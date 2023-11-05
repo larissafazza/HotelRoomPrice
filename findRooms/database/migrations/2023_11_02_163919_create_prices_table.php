@@ -13,8 +13,9 @@ return new class extends Migration {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->foreignId('room_id');
-            $table->date('date_of_stay');
-            $table->decimal('price', 10, 2); //price for the specific room type on that date
+            $table->date('start_date'); // Data de início do período de preços
+            $table->date('end_date');   // Data de término do período de preços
+            $table->decimal('price', 10, 2); // Preço para o tipo de quarto específico durante o período
             $table->timestamps();
         });
     }
