@@ -14,7 +14,7 @@
                 @if($hotel->image_url == '')
                     <img src="https://hryoutest.in.ua/uploads/images/default.jpg" alt="File wasn't uploaded">        
                 @else
-                    <img src="{{ asset($hotel->image_url) }}" alt="{{ $hotel->name }}">       
+                    <img src="{{ file_exists(public_path($hotel->image_url)) ? asset($hotel->image_url) :  asset($hotel->image_url) }}" alt="Hotel Image">
                 @endif
             </div>
             <div class="hotel-content">
