@@ -13,6 +13,7 @@ class Room extends Model
         'type', //single, double or suite
         'number_of_rooms', //amount of this type of rooms in the hotel
         'hotel_id',
+        'description'
     ];
 
     public function hotel()
