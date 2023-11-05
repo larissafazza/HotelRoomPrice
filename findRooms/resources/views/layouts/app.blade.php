@@ -23,10 +23,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Lato:wght@300&family=Montserrat:wght@300&family=Pinyon+Script&family=Roboto:wght@300&family=Seaweed+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Edu+TAS+Beginner&family=Lato:wght@300&family=Montserrat:wght@300&family=Pinyon+Script&family=Roboto:wght@300&family=Seaweed+Script&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -34,6 +32,7 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/landingpage.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/form.css') }}">
 
     <!-- Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -59,10 +58,12 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav nav-login">
+                    <ul class="navbar-nav nav-login ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}"><button type="button" class=" nav-register-button">{{ _('Login') }}</button></a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}"><button type="button" class=" nav-register-button">{{ _('Register and Host here!') }}</button></a>
                                 </li>

@@ -2,7 +2,7 @@ body {
     background-color: #293c51;
 }
 
-.container {
+.container-hotels {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -31,8 +31,17 @@ body {
 .hotel-content h3 {
     margin: 0px 20px 14px 20px;
     color: #293c51;
-    font-family: 'Seaweed Script', cursive;
-    font-size: 38px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.hotel-content a {
+    text-decoration: none;
+}
+
+.hotel-content h3:hover {
+    color: #FFA500;
 }
 
 .hotel-icon {
@@ -70,4 +79,9 @@ ul {
 .hotel-image img {
     width: 200px;
     height: auto;
+}
+
+.form-div-img {
+    display: flex;
+    justify-content: center;
 }

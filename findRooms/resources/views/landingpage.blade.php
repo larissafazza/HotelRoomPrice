@@ -4,7 +4,7 @@
 
 
 <div id="hotels" class="hotels">
-    <div class="container">
+    <div class="container-hotels">
         @foreach($hotels as $hotel)
         <div class="hotel-box">
             <div class="hotel-image">
@@ -15,7 +15,7 @@
                 @endif
             </div>
             <div class="hotel-content">
-                <h3>{{ $hotel->name }}</h3> 
+                <a href="{{ route('hotels.show', ['hotel' => $hotel]) }}"><h3>{{ $hotel->name }}</h3></a> 
                 <ul>
                     <li class="hotel-info">
                         <a href="{{ $hotel->website }}" target="_blank"><ion-icon class="hotel-icon" name="globe-outline"></ion-icon>{{ $hotel->website }}</a>
@@ -29,17 +29,7 @@
                     <li class="hotel-info">
                         <a href=""><ion-icon class="hotel-icon" name="bed-outline"></ion-icon>{{ ('Rooms Avaluable') }}</a>
                     </li>
-                    
                 </ul>
-                <!-- <a href="tel:+123456789">
-            <ion-icon name="call"></ion-icon>
-            <span>Call</span>
-        </a> -->
-                <!-- $table->string('name');
-            $table->string('location');
-            $table->string('phone');
-            $table->string('website')->nullable();
-            $table->string('image_url'); -->
             </div>
         </div>
         @endforeach

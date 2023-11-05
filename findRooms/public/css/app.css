@@ -7,19 +7,38 @@
     margin-right: 5px !important;
 }
 
-.btn-create-hotel {
-    background-color: #21252908;
-    border: 1px solid rgba(0, 0, 0, 0.175);
-}
-
 .nav-register-button {
-    border-radius: 21px;
+    border-radius: 10px;
     background-color: #293c51;
-    border: 4px solid #FFA500;
-    color: white;
-    padding: 12px;
+    color: #FFA500;
+    padding: 5px 12px 5px 12px;
 }
 
 .nav-register-button:hover {
-    background-color: #4a6a6c;
+    border: 2px solid #FFA500;
+}
+
+.card {
+    border: 4px solid #FFA500;
+}
+
+.btn-primary {
+    background-color: #293c51;
+    color: #FFA500;
+    border: 2px solid #293c51;
+}
+
+.btn-primary:hover {
+    background-color: #293c51;
+    color: #FFA500;
+    border: 2px solid #FFA500;
+}
+
+.card-header {
+    color: #293c51;
+    font-size: 18px;
+}
+
+.add-hotel-btn {
+    margin: 20px;
 }
