@@ -42,6 +42,10 @@ Route::get('rooms/{room}', [RoomsController::class, 'show'])
 Route::get('rooms/create/{hotel}', [RoomsController::class, 'create'])
     ->name('rooms.create');
     
+Route::get('/search', [RoomsController::class, 'showSearchPage'])->name('search')->withoutMiddleware('auth');
+    
+Route::get('/search/results', [RoomsController::class, 'searchResults'])->name('search.results')->withoutMiddleware('auth');
+
 Route::resource('prices', PricesController::class)
     ->middleware('auth');
 

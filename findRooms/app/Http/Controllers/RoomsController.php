@@ -108,4 +108,50 @@ class RoomsController extends Controller
         $room->delete();
         return redirect()->route('hotels.index');
     }
+
+    public function showSearchPage()
+    {
+        $hotels = Hotel::all();
+        return view('search', ['hotels' => $hotels]);
+    }
+
+    // Método para processar a pesquisa
+    public function searchResults(Request $request)
+    {
+        $hotels;
+        $rooms;
+        $prices;
+        $hotelID = $request->input('hotel');
+        if($hotelID != null){
+            foreach(Hotel::all() as $hotel){
+                if($hotel->id == $hotelID){
+                    array_push($hotels, $hotel);
+                }
+            }
+        }else{
+            foreach(Hotel::all() as $hotel){
+                array_push($hotels, $hotel);
+            }
+        }
+        $roomID = $request->input('room');
+        if($roomID != null){
+            foreach($hotels as $hotel){
+                if($hotel->room->id == $roomID){
+                    array_push($rooms, $hotel->room);
+                }
+            }
+        }else{
+            foreach($hotels as $hotel){
+                array_push($rooms, $hotel->room);
+            }
+        }
+        
+        $checkin = $request->input('checkin');
+        $checkout = $request->input('checkout');
+        $numRooms = $request->input('num_rooms');
+        array_push($lista, $objeto);
+
+
+        return view('searchresults', ['filteredHotels' => $filteredHotels]);
+    }
 }

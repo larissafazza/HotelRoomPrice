@@ -34,7 +34,8 @@ Upload Your Hotel here!
                         @endauth
                     </form>
                     <a class="btn-form btn btn-light" href="{{ route('prices.index', ['room' => $room->id]) }}">Search dates and prices</a>
-
+                    <a class="btn-form btn btn-light btn-simulate" href="{{ route('search') }}">Simulate Budget</a>
+                    
                     @auth
                     <button type="button" name="delete" class="btn-form btn-delete btn btn-light" onclick="confirmDelete({{ $room->id }}, event)">Delete Room Type</button>
                     <form id="delete-room-form-{{ $room->id }}" action="{{ route('rooms.destroy', ['room' => $room->id]) }}" method="POST" style="display: none;">
@@ -42,6 +43,7 @@ Upload Your Hotel here!
                         @method('DELETE')
                     </form>
                     @endauth
+
                 </div>
             </div>
         </div>

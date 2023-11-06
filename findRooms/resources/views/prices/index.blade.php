@@ -34,8 +34,7 @@ Upload Your Hotel here!
                         @auth
                             <a href="{{ route('prices.create', ['room' => $room->id]) }}"><button type="button" name="create-price" class="btn-form btn btn-light">Create new Price date for this room</button></a>
                         @endauth
-                    
-                        <a class="btn-form btn btn-light btn-simulate" href="{{ route('prices.index', ['room' => $room->id]) }}">Simulate Budget</a>
+
                     @auth
                     <form id="delete-room-form-{{ $price->id }}" action="{{ route('prices.destroy', ['price' => $price->id]) }}" method="POST" style="display: none;">
                     <button type="button" name="delete" class="btn-form btn-delete btn btn-light" onclick="confirmDelete({{ $price->id }}, event)">Delete Price</button>
