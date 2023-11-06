@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\PricesController;
 use App\Http\Controllers\RoomsController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,30 +17,39 @@ use App\Http\Controllers\RoomsController;
 |
 */
 
-Route::get('/', function () {
-    return view('landingpage');
-});
-
-Route::get('/', [HotelsController::class, 'index'])
-    ->name('landingpage');
+Route::get('/', [HotelsController::class, 'index'])->name('landingpage');
 
 Auth::routes();
 
-// Route::get('/', 'HotelsController@index');
+Route::get('/home', [HomeController::class, 'index'])
+    ->name('home')
+    ->middleware('auth');
+    
+Route::resource('hotels', HotelsController::class)
+    ->middleware('auth');
 
-// Route::get('/', function () {
-//     return view('auth.login');
-// });
+Route::get('hotels/{hotel}', [HotelsController::class, 'show'])
+    ->name('hotels.show')
+    ->withoutMiddleware('auth');
 
-// Route::resource('hotels', HotelsController::class)
-//     ->middleware('auth');
+Route::resource('rooms', RoomsController::class)
+        ->middleware('auth');
+    
+Route::get('rooms/{room}', [RoomsController::class, 'show'])
+    ->name('rooms.show')
+    ->withoutMiddleware('auth');
+    
+Route::get('rooms/create/{hotel}', [RoomsController::class, 'create'])
+    ->name('rooms.create');
+    
+Route::resource('prices', PricesController::class)
+    ->middleware('auth');
 
-// Route::put('todos/{id}/mark-as-done', [TodoController::class, 'markAsDone'])
-//     ->name('todos.markAsDone')
-//     ->middleware('auth');
+Route::get('prices', [PricesController::class, 'index'])
+    ->name('prices.index')
+    ->withoutMiddleware('auth');
 
-// Auth::routes();
 
-// Route::get('/home', [HomeController::class, 'index'])
-//     ->name('home')
-//     ->middleware('auth');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

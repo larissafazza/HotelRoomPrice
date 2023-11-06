@@ -11,10 +11,7 @@ Upload Your Hotel here!
             <div class="card">               
                 <div class="card-body">
                     <form class="hotel-form" method="put" action="{{ route('rooms.edit', $room->id) }}" id="create-form" enctype="multipart/form-data">
-                        @csrf
-                        @auth
-                            <input class="input-form form-control" type="hidden" name="hotel_id" value="{{ $room->hotel_id }}">
-                        @endauth    
+                        @csrf 
                         <h3>Room {{ $room->type }}</h3>
                         <div class="form-group form-div">
                             <label class="label label-room">Room Type</label>
@@ -35,14 +32,16 @@ Upload Your Hotel here!
                         @auth
                             <button type="submit" name="submit" class="btn-form btn btn-light">Edit</button>
                         @endauth
-                        <button type="submit" name="submit" class="btn-form btn btn-light">Search dates and prices</button>
                     </form>
+                    <a class="btn-form btn btn-light" href="{{ route('prices.index', ['room' => $room->id]) }}">Search dates and prices</a>
 
+                    @auth
                     <button type="button" name="delete" class="btn-form btn-delete btn btn-light" onclick="confirmDelete({{ $room->id }}, event)">Delete Room Type</button>
                     <form id="delete-room-form-{{ $room->id }}" action="{{ route('rooms.destroy', ['room' => $room->id]) }}" method="POST" style="display: none;">
                         @csrf
                         @method('DELETE')
                     </form>
+                    @endauth
                 </div>
             </div>
         </div>

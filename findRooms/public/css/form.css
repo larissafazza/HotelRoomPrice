@@ -29,7 +29,6 @@
 }
 
 .btn-delete {
-    float: right;
     border: 2px solid #293c51;
 }
 
@@ -81,4 +80,31 @@
 .form-group h5 {
     font-size: 18px;
     margin-bottom: 18px;
+}
+
+.price-box h4 {
+    color: #FFA500;
+}
+
+.price-box {
+    border: 3px solid #293c51;
+    margin: 20px 30px 0px 30px;
+    padding-left: 28px;
+    padding-top: 14px;
+    text-decoration: none;
+}
+
+.price-box:hover {
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn-simulate {
+    border: 2px solid #293c51;
+}
+
+.edit-price-buton {
+    border: 2px solid #293c51;
+    float: right;
+    margin-top: -50px;
+    margin-right: 20px;
 }
