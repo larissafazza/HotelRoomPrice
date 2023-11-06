@@ -22,7 +22,7 @@ Upload Your Hotel here!
                             <h5>{{ $room->description }}</h5>
                         </div>
                         <div class="form-group form-div">
-                            <label class="label label-room">Number of Rooms Avaluable</label>
+                            <label class="label label-room">Number of Rooms available</label>
                             <h5>{{ $room->number_of_rooms }}</h5>
                         </div>
                         <div class="form-group form-div">

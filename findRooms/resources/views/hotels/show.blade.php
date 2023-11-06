@@ -44,7 +44,7 @@ Upload Your Hotel here!
                         @foreach($hotel->rooms as $room)
                         <a class="room-link" href="{{ route('rooms.show', ['room' => $room]) }}"><div class="room-box">
                             <h2>{{ $room->type }}</h2>
-                            <span> {{ $room->number_of_rooms }} rooms avaluable</span>
+                            <span> {{ $room->number_of_rooms }} rooms available</span>
                             <h4>{{ $room->description }}<h4>
                         </div></a>
                         @endforeach

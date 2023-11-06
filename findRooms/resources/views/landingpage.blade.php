@@ -30,7 +30,7 @@
                         <a href="https://wa.me/{{$hotel->phone}}" target="_blank"><ion-icon class="hotel-icon" name="call"></ion-icon>{{ $hotel->phone }}</a>
                     </li>
                     <li class="hotel-info">
-                        <a href=""><ion-icon class="hotel-icon" name="bed-outline"></ion-icon>{{ ('Rooms Avaluable') }}</a>
+                        <a href=""><ion-icon class="hotel-icon" name="bed-outline"></ion-icon>{{ ('Rooms available') }}</a>
                     </li>
                 </ul>
             </div>
