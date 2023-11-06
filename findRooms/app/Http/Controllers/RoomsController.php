@@ -23,7 +23,7 @@ class RoomsController extends Controller
      */
     public function create(Request $request)
     {
-        $hotelId = $request->input('hotel');
+        $hotelId = $request->hotel;
         $hotel = Hotel::find($hotelId);
         return view('rooms.create', ['hotel' => $hotel]);
     }
@@ -80,25 +80,25 @@ class RoomsController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Room $room)
-{
-    $request->validate([
-        'type' => 'required|string',
-        'description' => 'required|string',
-        'number' => 'required|numeric',
-    ]);
+    {
+        $request->validate([
+            'type' => 'required|string',
+            'description' => 'required|string',
+            'number' => 'required|numeric',
+        ]);
 
-    $hotel_id = $room->hotel->id;
+        $hotel_id = $room->hotel->id;
 
-    $data = [
-        'type' => $request->type,
-        'description' => $request->description,
-        'number_of_rooms' => $request->number,
-    ];
+        $data = [
+            'type' => $request->type,
+            'description' => $request->description,
+            'number_of_rooms' => $request->number,
+        ];
 
-    $room->update($data);
+        $room->update($data);
 
-    return redirect()->route('hotels.show', ['hotel' => $hotel_id]);
-}
+        return redirect()->route('hotels.show', ['hotel' => $hotel_id]);
+    }
 
     /**
      * Remove the specified resource from storage.
